@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/Css/style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+    <div>
+        <ul>
+            <li>
+                <a th:if="!${username}" href="/login">Log In</a>
+            </li>
+            <li>
+                <a th:if="!${username}" href="/signup">Sign Up</a>
+            </li>
+            <li>
+                <a th:if="${username}" href="/logout">Log Out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<h1 th:if="${firstName != null}" th:text="${'Hello There ' + firstName} + ' Welcome to CodeFellowship so happy to have you! :D'"> </h1>
+
+<div class="Brief">
+    <h3>CodeFellowship App Brief :</h3>
+    <ul>
+        <li> - User Authentication: Secure login with BCrypt-hashed passwords, and easy access to signup page from the login page.
+        </li>
+        <li>- User Profile: Profiles include username, first and last name, date of birth, and bio, these fields set during signup and non-editable afterward.
+        </li>
+        <li>- User Registration: Seamless signup process with automatic login.
+        </li>
+        <li>
+            - Homepage: Login/signup links for non-logged-in users, logout for logged-in users, first name displayed prominently for logged-in users.
+        </li>
+    </ul>
+</div>
+
+<div class="info">
+    <h2 th:if="${username != null}" >Your Profile info</h2>
+    <p th:if="${username != null}" th:text="${'Username: ' + username}"></p>
+    <p th:if="${firstName != null}" th:text="${'First Name: ' + firstName}"></p>
+    <p th:if="${lastName != null}" th:text="${'Last Name: ' + lastName}"></p>
+    <p th:if="${dateOfBirth != null}" th:text="${'Date Of Birth: ' + dateOfBirth}"></p>
+    <p th:if="${bio != null}" th:text="${'Bio: ' + bio}"></p>
+</div>
+</body>
+</html>
