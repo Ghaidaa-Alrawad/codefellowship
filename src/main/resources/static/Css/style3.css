@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Caveat', cursive;
+    background-color: rgba(255, 250, 221, 0.2);
+    color: rgb(34, 102, 141);
+    font-size: 26px;
+
+}
+
+div {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+
+}
+
+h1 {
+    color: rgb(34, 102, 141);
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="Date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid rgb(142, 205, 221);
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    background-color: rgb(34, 102, 141);
+    color: rgb(255, 250, 221);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(142, 205, 221);
+}
+
+h2 {
+    margin-top: 10px;
+}
+
+a {
+    color: rgb(34, 102, 141);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

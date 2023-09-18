@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In Page</title>
+    <link rel="stylesheet" href="/Css/style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div>
+
+    <h1>Login here using only you Username and Password</h1>
+
+    <form action="/perform_login" method="POST">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+
+        <input type="submit" value="Log in">
+    </form>
+
+    <h2>(Don't have an account?? sign up <a href="/signup">here</a>)</h2>
+</div>
+</body>
+</html>

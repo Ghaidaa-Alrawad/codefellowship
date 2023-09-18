@@ -1,0 +1,63 @@
+/* Reset some default browser styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Apply the color palette */
+body {
+    background-color: rgba(255, 250, 221, 0.2);
+    font-family: 'Caveat', cursive;
+    color: rgb(34, 102, 141);
+    font-size: 26px;
+
+}
+
+nav {
+    background-color: rgb(34, 102, 141);
+    color: rgb(255, 250, 221);
+    padding: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 250, 221);
+}
+
+h1, h2, h3 {
+    margin-top: 20px;
+    color: rgb(34, 102, 141);
+}
+
+/* Add a border to div elements */
+div {
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Style your profile info */
+p {
+    margin: 5px 0;
+}
+
+/* Style the homepage title */
+h1 {
+    text-align: center;
+}
+
+/* Add some padding to the CodeFellowship App Brief list */
+ul {
+    padding-left: 20px;
+}
