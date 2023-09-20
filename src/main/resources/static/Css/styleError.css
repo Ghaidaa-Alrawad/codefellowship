@@ -1,0 +1,20 @@
+body {
+    font-family: 'Caveat', cursive;
+    font-size: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 100vh; /* Ensure full viewport height */
+}
+
+.error-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    margin-top: 20px; /* Add some space at the top */
+}
+
+.error-info img {
+    margin-bottom: 20px; /* Add space between image and text */
+}

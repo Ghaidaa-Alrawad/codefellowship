@@ -1,18 +1,15 @@
 package com.LTUC.codefellowship.controllers;
 
-
 import com.LTUC.codefellowship.models.ApplicationUser;
 import com.LTUC.codefellowship.models.Post;
 import com.LTUC.codefellowship.repositories.ApplicationUserRepo;
 import com.LTUC.codefellowship.repositories.PostRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.security.Principal;
@@ -40,11 +37,8 @@ public class PostController {
             m.addAttribute("lastName", applicationUser.getLastName());
             m.addAttribute("dateOfBirth", applicationUser.getDateOfBirth());
             m.addAttribute("bio", applicationUser.getBio());
-
             m.addAttribute("userPosts", userPosts);
-
-            // Add the path to the default profile picture
-            m.addAttribute("defaultProfilePicture", "https://i.pinimg.com/236x/73/8b/82/738b82ae3c1a1b793aa9a68d9b19439f.jpg");
+            m.addAttribute("defaultProfilePicture", "https://i.pinimg.com/564x/b6/80/b9/b680b917d8b5e428d6dadca3a15684bb.jpg");
         }
         return "userProfile.html";
     }
@@ -57,14 +51,11 @@ public class PostController {
             String username = principal.getName();
             ApplicationUser applicationUser = applicationUserRepo.findByUsername(username);
 
-            // Create a new post
             Post post = new Post(applicationUser, body, LocalDate.now());
 
-            // Save the post to the database
             postRepo.save(post);
         }
 
-        // Redirect back to the user profile page
-        return new RedirectView("myprofile");
+        return new RedirectView("/myprofile");
     }
 }

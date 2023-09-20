@@ -21,6 +21,7 @@ import java.security.Principal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.text.ParseException;
+import java.util.Optional;
 
 @Controller
 public class ApplicationUserController {
@@ -84,7 +85,6 @@ public class ApplicationUserController {
         return new RedirectView("/");
     }
 
-
     @GetMapping("/")
     public String getHomePage(Principal p, Model m){
         if (p != null){
@@ -96,9 +96,7 @@ public class ApplicationUserController {
             m.addAttribute("lastName", applicationUser.getLastName());
             m.addAttribute("dateOfBirth", applicationUser.getDateOfBirth());
             m.addAttribute("bio", applicationUser.getBio());
-
         }
-
         return "index.html";
     }
 
@@ -113,7 +111,7 @@ public class ApplicationUserController {
             m.addAttribute("lastName", applicationUser.getLastName());
             m.addAttribute("dateOfBirth", applicationUser.getDateOfBirth());
             m.addAttribute("bio", applicationUser.getBio());
-            m.addAttribute("defaultProfilePicture", "https://i.pinimg.com/236x/73/8b/82/738b82ae3c1a1b793aa9a68d9b19439f.jpg");
+            m.addAttribute("defaultProfilePicture", "https://i.pinimg.com/564x/b6/80/b9/b680b917d8b5e428d6dadca3a15684bb.jpg");
         }
 
         ApplicationUser applicationUser = applicationUserRepo.findById(id)
@@ -125,12 +123,10 @@ public class ApplicationUserController {
         m.addAttribute("lastName", applicationUser.getLastName());
         m.addAttribute("dateOfBirth", applicationUser.getDateOfBirth());
         m.addAttribute("bio", applicationUser.getBio());
-        m.addAttribute("defaultProfilePicture", "https://i.pinimg.com/236x/73/8b/82/738b82ae3c1a1b793aa9a68d9b19439f.jpg");
+        m.addAttribute("defaultProfilePicture", "https://i.pinimg.com/564x/b6/80/b9/b680b917d8b5e428d6dadca3a15684bb.jpg");
 
         return "usersById.html";
     }
-
-
 
     public void authWithHttpServletRequest(String username, String password) {
         try {
