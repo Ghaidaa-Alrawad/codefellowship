@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User By ID</title>
+    <link rel="stylesheet" href="/Css/style5.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav-bar">
+    <div>
+        <ul>
+            <li>
+                <a th:if="${username}" href="/perform_logout">Log Out</a>
+            </li>
+            <li>
+                <a th:if="${username != null}" href="/myprofile">Go Back to your profile</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="info">
+  <h2 th:if="${username != null}">Profile info</h2>
+  <img th:src="${defaultProfilePicture}" alt="Default Profile Picture" width="200" height="200">
+  <p th:if="${username != null}" th:text="${'Username: ' + username}"></p>
+  <p th:if="${firstName != null}" th:text="${'First Name: ' + firstName}"></p>
+  <p th:if="${lastName != null}" th:text="${'Last Name: ' + lastName}"></p>
+  <p th:if="${dateOfBirth != null}" th:text="${'Date Of Birth: ' + dateOfBirth}"></p>
+  <p th:if="${bio != null}" th:text="${'Bio: ' + bio}"></p>
+</div>
+</body>
+</html>

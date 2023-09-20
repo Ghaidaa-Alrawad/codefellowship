@@ -22,11 +22,15 @@
             <li>
                 <a th:if="${username}" href="/perform_logout">Log Out</a>
             </li>
+            <li>
+                <a th:if="${username != null}" href="/myprofile">Go to your profile</a>
+            </li>
         </ul>
     </div>
 </nav>
 
 <h1 th:if="${firstName != null}" th:text="${'Hello There ' + firstName} + ' Welcome to CodeFellowship so happy to have you! :D'"> </h1>
+<div th:replace="/fragments/error-fragment :: codeF-error"></div>
 
 <div class="Brief">
     <h3>CodeFellowship App Brief :</h3>
@@ -41,15 +45,9 @@
             - Homepage: Login/signup links for non-logged-in users, logout for logged-in users, first name displayed prominently for logged-in users.
         </li>
     </ul>
+
+    <h2 th:if="${username != null}">If you want to see a specific user info you can visit http://localhost:8080/users/{id}, and you can put the user id that you want to view</h2>
 </div>
 
-<div class="info">
-    <h2 th:if="${username != null}" >Your Profile info</h2>
-    <p th:if="${username != null}" th:text="${'Username: ' + username}"></p>
-    <p th:if="${firstName != null}" th:text="${'First Name: ' + firstName}"></p>
-    <p th:if="${lastName != null}" th:text="${'Last Name: ' + lastName}"></p>
-    <p th:if="${dateOfBirth != null}" th:text="${'Date Of Birth: ' + dateOfBirth}"></p>
-    <p th:if="${bio != null}" th:text="${'Bio: ' + bio}"></p>
-</div>
 </body>
 </html>
