@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+</head>
+<body>
+<nav>
+    <div>
+        <ul>
+            <li>
+                <a th:if="${username}" href="/perform_logout">Log Out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ... -->
+<div class="info">
+    <h2 th:if="${username != null}">Your Profile info</h2>
+    <!-- Display the default profile picture -->
+    <img th:src="${defaultProfilePicture}" alt="Default Profile Picture" width="100" height="100">
+    <p th:if="${username != null}" th:text="${'Username: ' + username}"></p>
+    <p th:if="${firstName != null}" th:text="${'First Name: ' + firstName}"></p>
+    <p th:if="${lastName != null}" th:text="${'Last Name: ' + lastName}"></p>
+    <p th:if="${dateOfBirth != null}" th:text="${'Date Of Birth: ' + dateOfBirth}"></p>
+    <p th:if="${bio != null}" th:text="${'Bio: ' + bio}"></p>
+</div>
+<!-- ... -->
+
+
+<!-- ... -->
+<h2 class="headers">Create a New Post</h2>
+<form method="post" action="/post/create" class="post-form">
+    <label for="body" class="post-label">Post Content:</label>
+    <textarea id="body" name="body" rows="4" cols="50" required class="post-textarea"></textarea>
+    <br>
+    <button type="submit" value="Create Post" class="post-submit-button">Submit</button>
+</form>
+<!-- ... -->
+
+
+<!-- Display the user's posts with creation time -->
+<h2 class="headers">Your Posts</h2>
+<ul>
+    <th:block th:each="post : ${userPosts}">
+        <li>
+            <!-- Display the post body -->
+            <p th:text="${post.body}"></p>
+            <!-- Display the creation time -->
+            <p th:text="${'Created at: ' + post.createdAt}"></p>
+        </li>
+    </th:block>
+</ul>
+
+</body>
+</html>

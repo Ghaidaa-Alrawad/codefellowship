@@ -1,14 +1,13 @@
 package com.LTUC.codefellowship.models;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.parameters.P;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class ApplicationUser implements UserDetails {
@@ -23,6 +22,9 @@ public class ApplicationUser implements UserDetails {
     private String lastName;
     private String  dateOfBirth;
     private String bio;
+
+    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL)
+    private List<Post> posts;
 
     public ApplicationUser(){}
 
@@ -110,5 +112,13 @@ public class ApplicationUser implements UserDetails {
 
     public void setBio(String bio) {
         this.bio = bio;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 }

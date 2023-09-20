@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Error 404!!</title>
+</head>
+<body>
+<div class="error-info">
+  <h1>Some thing went wrong sorry!!</h1>
+  <img src="https://i.pinimg.com/236x/49/bb/1d/49bb1d6f5c3881f6c0f394b6a4613c90.jpg
+" alt="404 pic" width="100" height="100">
+  <span th:if="${exception}" th:text="${message}"></span>
+</div>
+</body>
+</html>
