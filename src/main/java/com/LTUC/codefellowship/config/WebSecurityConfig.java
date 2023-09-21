@@ -35,6 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/", "/userInfo", "/login", "/signup").permitAll()
+                .antMatchers("/Css/**").permitAll()
                 .anyRequest().authenticated() // here we are protecting the both api and web pages
                 .and()
                 .formLogin()
