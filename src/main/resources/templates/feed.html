@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Feed</title>
+    <link rel="stylesheet" href="/Css/style7Feed.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav id="navbar">
+    <div>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/myprofile">Go to your profile</a>
+            </li>
+            <li>
+                <a href="/users">Users</a>
+            </li>
+            <li>
+                <a href="/feed">Feed</a>
+            </li>
+            <li>
+                <a href="/perform_logout">Log Out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="feed-container">
+    <h1>Feed</h1>
+    <ul id="feed-posts">
+        <li th:each="post : ${allPosts}" class="feed-post">
+            <div>
+                <a th:href="@{'/users/' + ${post.userId.id}}"><span th:text="${post.userId.username}"></span></a>
+                <p th:text="${post.body}"></p>
+                <p th:text="${post.createdAt}"></p>
+                <a th:href="@{'/users/' + ${post.userId.id}}">View User Profile</a>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

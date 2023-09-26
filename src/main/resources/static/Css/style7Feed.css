@@ -1,0 +1,70 @@
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    background-color: rgba(255, 250, 221, 0.2);
+    font-family: 'Caveat', cursive;
+    color: rgb(34, 102, 141);
+    font-size: 26px;
+
+}
+
+#navbar {
+    background-color: rgb(34, 102, 141);
+    color: rgb(255, 250, 221);
+    padding: 10px;
+}
+
+#navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+#navbar li {
+    margin-right: 20px;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: rgb(255, 250, 221);
+}
+
+#feed-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#feed-container h1 {
+    color: rgb(34, 102, 141);
+}
+
+#feed-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feed-post {
+    width: calc(33.33% - 20px);
+    margin: 20px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.feed-post a {
+    text-decoration: none;
+    color: rgb(34, 102, 141);
+    font-weight: bold;
+}
+
+.feed-post p {
+    margin-top: 10px;
+}

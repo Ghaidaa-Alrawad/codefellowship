@@ -1,0 +1,75 @@
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    background-color: rgba(255, 250, 221, 0.2);
+    font-family: 'Caveat', cursive;
+    color: rgb(34, 102, 141);
+    font-size: 26px;
+
+}
+
+nav {
+    background-color: rgb(34, 102, 141);
+    color: rgb(255, 250, 221);
+    padding: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 250, 221);
+}
+
+.usersList {
+    margin: 20px;
+}
+
+.usersList h1 {
+    text-align: center;
+}
+
+.usersList h6 {
+    text-align: center;
+    color: rgb(128, 128, 128);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: rgb(34, 102, 141);
+    color: rgb(255, 250, 221);
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid rgb(128, 128, 128);
+}
+
+td a {
+    text-decoration: none;
+    color: rgb(34, 102, 141);
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: rgba(34, 102, 141, 0.2);
+}
