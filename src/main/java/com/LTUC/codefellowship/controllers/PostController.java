@@ -58,4 +58,11 @@ public class PostController {
 
         return new RedirectView("/myprofile");
     }
+
+    @GetMapping("/feed")
+    public String getFeedPage(Model model) {
+        List<Post> allPosts = postRepo.findAll();
+        model.addAttribute("allPosts", allPosts);
+        return "feed.html";
+    }
 }

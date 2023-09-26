@@ -14,6 +14,8 @@ This application is a social platform built using Spring Boot to practice user a
 - Creating Posts: Users can create posts to share their thoughts and updates.
 - Viewing Posts: Users can view posts on their profile page.
 - Viewing Other Users: Users can view the information about other users by their id's
+- Having a feed page that will display all the posts that we have and you have the ability to see user profile of the user that posted this post
+- Users table to display all the users that we have in the system which will allow you to see any profile that you want
 
 ---
 
@@ -46,3 +48,6 @@ This application is a social platform built using Spring Boot to practice user a
 
 **Viewing Posts and other users info**
 - Users can view posts on their profile page and other users' profiles.
+
+**Viewing All The Users**
+- You can view any user profile form the posts or form the users page 

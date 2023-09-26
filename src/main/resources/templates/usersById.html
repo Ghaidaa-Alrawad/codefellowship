@@ -10,14 +10,23 @@
 </head>
 <body>
 
-<nav class="nav-bar">
+<nav>
     <div>
         <ul>
             <li>
-                <a th:if="${username}" href="/perform_logout">Log Out</a>
+                <a th:if="${username != null}" href="/">Home</a>
             </li>
             <li>
-                <a th:if="${username != null}" href="/myprofile">Go Back to your profile</a>
+                <a th:if="${username != null}" href="/myprofile">Go to your profile</a>
+            </li>
+            <li>
+                <a th:if="${username != null}" href="/users">Users</a>
+            </li>
+            <li>
+                <a th:if="${username != null}" href="/feed">Feed</a>
+            </li>
+            <li>
+                <a th:if="${username}" href="/perform_logout">Log Out</a>
             </li>
         </ul>
     </div>
@@ -32,5 +41,24 @@
   <p th:if="${dateOfBirth != null}" th:text="${'Date Of Birth: ' + dateOfBirth}"></p>
   <p th:if="${bio != null}" th:text="${'Bio: ' + bio}"></p>
 </div>
+
+<div class="user-posts">
+    <h2>User Posts</h2>
+    <ul>
+        <li th:each="post : ${userPosts}">
+            <p th:text="${post.body}"></p>
+            <p th:text="${post.createdAt}"></p>
+        </li>
+    </ul>
+</div>
+
+<div class="follow-button">
+    <form th:action="@{'/follow/' + ${userProfileId}}" method="post">
+        <button type="submit" th:if="${not isFollowing}">Follow</button>
+        <button type="submit" th:if="${isFollowing}">Unfollow</button>
+        <input type="hidden" th:field="*{userProfileId}" th:value="${userProfileId}" />
+    </form>
+</div>
+
 </body>
 </html>

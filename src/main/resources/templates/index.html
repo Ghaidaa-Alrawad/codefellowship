@@ -25,6 +25,12 @@
             <li>
                 <a th:if="${username != null}" href="/myprofile">Go to your profile</a>
             </li>
+            <li>
+                <a th:if="${username != null}" href="/users">Users</a>
+            </li>
+            <li>
+                <a th:if="${username != null}" href="/feed">Feed</a>
+            </li>
         </ul>
     </div>
 </nav>
@@ -46,8 +52,21 @@
         </li>
     </ul>
 
-    <h2 th:if="${username != null}">If you want to see a specific user info you can visit http://localhost:8080/users/{id}, and you can put the user id that you want to view</h2>
 </div>
+
+<!--<div class="feed" th:if="${username != null}">-->
+<!--    <h2>Feed</h2>-->
+<!--    <ul>-->
+<!--        <th:block th:each="followedUser : ${loggedInUser.following}">-->
+<!--            <th:block th:each="post : ${followedUser.posts}">-->
+<!--                <li>-->
+<!--                    <span th:text="${followedUser.username}"></span> - <span th:text="${post.createdAt}"></span>-->
+<!--                    <p th:text="${post.body}"></p>-->
+<!--                </li>-->
+<!--            </th:block>-->
+<!--        </th:block>-->
+<!--    </ul>-->
+<!--</div>-->
 
 </body>
 </html>
