@@ -15,6 +15,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.security.Principal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class PostController {
@@ -43,8 +44,6 @@ public class PostController {
         return "userProfile.html";
     }
 
-
-
     @PostMapping("/post/create")
     public RedirectView createPost(Principal principal, @RequestParam String body) {
         if (principal != null) {
@@ -60,9 +59,16 @@ public class PostController {
     }
 
     @GetMapping("/feed")
-    public String getFeedPage(Model model) {
-        List<Post> allPosts = postRepo.findAll();
-        model.addAttribute("allPosts", allPosts);
+    public String getFeedPage(Model model, Principal principal) {
+        if (principal != null) {
+            ApplicationUser user = applicationUserRepo.findByUsername(principal.getName());
+
+            Set<ApplicationUser> followPeople = user.getFollowing();
+            followPeople.remove(user);
+
+            List<Post> followedUsersPosts = postRepo.findByUserIdIn(followPeople);
+            model.addAttribute("posts", followedUsersPosts);
+        }
         return "feed.html";
     }
 }
