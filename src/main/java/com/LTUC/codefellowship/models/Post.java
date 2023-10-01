@@ -33,10 +33,6 @@ public class Post {
         return userId;
     }
 
-//    public void setUserId(ApplicationUser userId) {
-//        this.userId = userId;
-//    }
-
     public String getBody() {
         return body;
     }

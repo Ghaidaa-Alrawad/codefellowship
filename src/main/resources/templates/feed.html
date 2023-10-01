@@ -32,8 +32,8 @@
 </nav>
 <div id="feed-container">
     <h1>Feed</h1>
-    <ul id="feed-posts">
-        <li th:each="post : ${allPosts}" class="feed-post">
+    <ul id="feed-posts" th:if="${not #lists.isEmpty(posts)}">
+        <li th:each="post : ${posts}" class="feed-post">
             <div>
                 <a th:href="@{'/users/' + ${post.userId.id}}"><span th:text="${post.userId.username}"></span></a>
                 <p th:text="${post.body}"></p>
@@ -42,6 +42,7 @@
             </div>
         </li>
     </ul>
+    <div th:if="${#lists.isEmpty(posts)}">No posts to display.</div>
 </div>
 </body>
 </html>

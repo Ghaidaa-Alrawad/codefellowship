@@ -53,12 +53,10 @@
 </div>
 
 <div class="follow-button">
-    <form th:action="@{'/follow/' + ${userProfileId}}" method="post">
-        <button type="submit" th:if="${not isFollowing}">Follow</button>
-        <button type="submit" th:if="${isFollowing}">Unfollow</button>
-        <input type="hidden" th:field="*{userProfileId}" th:value="${userProfileId}" />
+    <form th:action="${'/follow/'+ userId}" th:method="post">
+        <input type="hidden" name="userId" th:value="${userId}" />
+        <button type="submit">Follow</button>
     </form>
 </div>
-
 </body>
 </html>
